@@ -13,6 +13,7 @@ Plugin 'syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'scrooloose/nerdtree'
+Plugin 'othree/html5.vim'
 
 " All Plugins must be added before the following line
 call vundle#end()            " required
