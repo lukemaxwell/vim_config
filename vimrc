@@ -11,6 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'scrooloose/nerdtree'
 
 " All Plugins must be added before the following line
 call vundle#end()            " required
