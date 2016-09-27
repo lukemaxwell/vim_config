@@ -21,3 +21,6 @@ $ vim +PluginInstall +qall
 ```
 :SyntasticCheck
 ```
+
+## Equalise split widths
+<kbd>CTRL-W</kbd> <kbd>=</kbd>
