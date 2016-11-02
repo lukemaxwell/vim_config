@@ -48,3 +48,9 @@ let g:flake8_show_quickfix=0
 
 " flake8
 autocmd BufWritePost *.py call Flake8()
+
+" Tab spaces
+au FileType python setl ts=4 sw=4 sts=4 et
+au FileType less setl ts=4 sw=4 sts=4 et
+au FileType dart setl ts=4 sw=4 sts=4 et
+au FileType html setl ts=2 sw=2 sts=2 et
