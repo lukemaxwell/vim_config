@@ -15,6 +15,11 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'scrooloose/nerdtree'
 Plugin 'othree/html5.vim'
 
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/dart-vim-plugin
+endif
+
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,6 +43,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+hi SpellBad ctermfg=015 ctermbg=001 guifg=#yyyyyy guibg=#zzzzzz
+
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -52,5 +60,19 @@ autocmd BufWritePost *.py call Flake8()
 " Tab spaces
 au FileType python setl ts=4 sw=4 sts=4 et
 au FileType less setl ts=4 sw=4 sts=4 et
+au FileType css setl ts=2 sw=2 sts=2 et
 au FileType dart setl ts=4 sw=4 sts=4 et
 au FileType html setl ts=2 sw=2 sts=2 et
+au FileType yaml setl ts=2 sw=2 sts=2 et
+
+" Python strip whitespace
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+
