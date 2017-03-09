@@ -25,6 +25,11 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/dart-vim-plugin
 endif
 
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/dart-vim-plugin
+endif
+
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
