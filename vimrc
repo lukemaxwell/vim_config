@@ -25,11 +25,6 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/dart-vim-plugin
 endif
 
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/dart-vim-plugin
-endif
-
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,7 +58,13 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_flake8_post_args='--ignore=E402'
 let g:flake8_show_quickfix=0
 
+"Ctrl-w + e shall enable checking
+"Ctrl-w + f shall disable checking
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
+
 " flake8
+let g:syntastic_python_flake8_exe='~/flake8.sh'
 autocmd BufWritePost *.py call Flake8()
 
 " markdown
