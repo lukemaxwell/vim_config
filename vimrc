@@ -73,6 +73,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " Tab spaces
 au FileType python setl ts=4 sw=4 sts=4 et
+au FileType c setl ts=4 sw=4 sts=4 et
 au FileType less setl ts=4 sw=4 sts=4 et
 au FileType css setl ts=2 sw=2 sts=2 et
 au FileType dart setl ts=4 sw=4 sts=4 et
